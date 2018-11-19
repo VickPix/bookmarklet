@@ -49,7 +49,7 @@ var setupBox = function(){
     newDiv.style.padding = '0.4em 1em';
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
-    newDiv.style.setProperty('text-shadow','2px 2px #fff, -2px 2px #fff, 2px -2px #fff, -2px -2px #fff')
+    newDiv.style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff')
     newDiv.style.transition = "all 2s";	  
     newDiv.style.fontSize = '3em';
     newDiv.style.zIndex = '9999';
