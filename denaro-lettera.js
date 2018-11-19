@@ -57,7 +57,7 @@ var fillVars = function(){
 	  }
   }
   last = sumTot;
-	series.append(new Date().getTime(), last+Math.random());
+	series.append(new Date().getTime(), (last/1000)+Math.random());
 }
 
 var setupBox = function(){
