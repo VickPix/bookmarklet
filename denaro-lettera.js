@@ -41,11 +41,12 @@ var fillVars = function(){
   	arrow.innerText = ''
   }else{
   	if(last < sumTot){
-		arrow.innerText = '&nearr;'	  
+		arrow.innerHTML = "&nearr;"	  
 	  }else{
-		arrow.innerText = '&searr;'
+		arrow.innerHTML = "&searr;"
 	  }
   }
+  last = sumTot;
   
 
 }
