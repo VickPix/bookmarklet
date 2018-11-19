@@ -30,7 +30,7 @@ var fillVars = function(){
   if(sumLettera-sumDenaro > 0){
 	  box.style.color = '#00ff00';
   }else{
-	  box.style.color = '#ff0000';
+	  box.style.color = '#ee3333';
   }
 
 }
