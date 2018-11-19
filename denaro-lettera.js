@@ -50,7 +50,7 @@ var setupBox = function(){
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
     newDiv.style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff')
-    newDiv.style.transition = "all 2s";	  
+    newDiv.style.transition = "all 1s";	  
     newDiv.style.fontSize = '3em';
     newDiv.style.zIndex = '9999';
     newDiv.style.opacity = '1';
@@ -59,6 +59,9 @@ var setupBox = function(){
   }
   document.getElementById('letDenBox').onmouseover = function() {
     this.style.opacity = '0';
+  }
+  document.getElementById('letDenBox').onmouseleave = function() {
+    this.style.opacity = '1';
   }
 
 };
