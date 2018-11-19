@@ -46,7 +46,7 @@ var setupBox = function(){
     newDiv.style.bottom = '0';
     //newDiv.style.right = '0';
     newDiv.style.backgroundColor = 'rgba(58, 58, 58, 0.4)';
-    newDiv.style.padding = '0.3em 3em';
+    newDiv.style.padding = '.3em .3em';
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
     newDiv.style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff')
