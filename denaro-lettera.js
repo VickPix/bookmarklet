@@ -11,7 +11,9 @@ var init = function(){
   // Gather elements to update //&nearr;
   label = document.getElementById('letDenBox-label');
   arrow = document.getElementById('letDenBox-arrow');
-  box = document.getElementById('letDenBox')
+  box = document.getElementById('letDenBox');
+	
+	var random = new TimeSeries();
   
   // Fill the Div
   fillVars();
@@ -47,15 +49,14 @@ var fillVars = function(){
 	  }
   }
   last = sumTot;
-  
-
+	random.append(new Date().getTime(), last);
 }
 
 var setupBox = function(){
 
   if ( !document.getElementById('letDenBox') ) {
     var newDiv = document.createElement('div');
-    var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div> ';
+    var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div><canvas id="chart" width="400" height="100"></canvas>';
     newContent += '';
     newDiv.setAttribute('id', 'letDenBox');
     newDiv.style.position = 'fixed';
@@ -88,7 +89,14 @@ var setupBox = function(){
   }
 
 };
+	
+function createTimeline() {
+	var chart = new SmoothieChart();
+	chart.addTimeSeries(random, { strokeStyle: 'rgba(0, 255, 0, 1)', fillStyle: 'rgba(0, 255, 0, 0.2)', lineWidth: 4 });
+	chart.streamTo(document.getElementById("chart"), 500);
+}
 
 init();
+createTimeline();
 
 })(window);
