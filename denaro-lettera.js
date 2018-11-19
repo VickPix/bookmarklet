@@ -21,14 +21,16 @@ var init = function(){
   // Update the Div
   setInterval( fillVars, 3000 );
 
-  createTimeline();
+  chart = new SmoothieChart();
+  chart.addTimeSeries(random, { strokeStyle: 'rgba(80, 150, 230, 1)', fillStyle: 'rgba(100, 180, 255, 0.3)', lineWidth: 3 });
+  chart.streamTo(document.getElementById("chart"), 3000);
 	
 }
 
 var fillVars = function(){
   var sumDenaro = 0, sumLettera = 0, sumTot = 0;
-	var denaro = document.querySelectorAll('td:nth-child(3)')
-	var lettera = document.querySelectorAll('td:nth-child(6)')
+  var denaro = document.querySelectorAll('td:nth-child(3)')
+  var lettera = document.querySelectorAll('td:nth-child(6)')
 	for (var i = 0; i < denaro.length; i++) {
 		//console.log(parseInt(denaro[i].innerText.replace('.','')),parseInt(lettera[i].innerText.replace('.','')));
 		sumDenaro += isNaN(parseInt(denaro[i].innerText.replace('.',''))) ? 0 : parseInt(denaro[i].innerText.replace('.',''));
@@ -92,12 +94,6 @@ var setupBox = function(){
 
 };
 	
-function createTimeline() {
-	var chart = new SmoothieChart();
-	chart.addTimeSeries(random, { strokeStyle: 'rgba(80, 150, 230, 1)', fillStyle: 'rgba(100, 180, 255, 0.3)', lineWidth: 3 });
-	chart.streamTo(document.getElementById("chart"), 3000);
-}
-
 init();
 
 })(window);
