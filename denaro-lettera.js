@@ -43,6 +43,8 @@ var setupBox = function(){
     newDiv.style.padding = '0.4em 1em';
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
+    //newDiv.style.transition = '';	  
+    newDiv.style.fontSize = '3em';
     newDiv.style.zIndex = '9999';
     newDiv.innerHTML = newContent;
     document.body.appendChild(newDiv);
