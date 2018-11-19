@@ -33,8 +33,8 @@ var setupBox = function(){
 
   if ( !document.getElementById('letDenBox') ) {
     var newDiv = document.createElement('div');
-    var newContent = '<span id=letDenBox-label></span> ';
-    newContent += ':: ';
+    var newContent = '<div id=letDenBox-label></div> ';
+    newContent += '';
     newDiv.setAttribute('id', 'letDenBox');
     newDiv.style.position = 'fixed';
     newDiv.style.bottom = '0';
