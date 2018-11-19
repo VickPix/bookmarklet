@@ -28,9 +28,9 @@ var fillVars = function(){
 	}
   label.innerHTML = sumLettera-sumDenaro;
   if(sumLettera-sumDenaro > 0){
-	  newDiv.style.color = '#00CC00';
+	  box.style.color = '#00CC00';
   }else{
-	  newDiv.style.color = '#CC0000';
+	  box.style.color = '#CC0000';
   }
 
 }
