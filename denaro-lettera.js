@@ -23,8 +23,8 @@ var fillVars = function(){
 	var denaro = document.querySelectorAll('td:nth-child(3)')
 	var lettera = document.querySelectorAll('td:nth-child(6)')
 	for (var i = 0; i < denaro.length; i++) {
-		 sumDenaro += parseInt(denaro[i].innerText.replace('.',''));
-		 sumLettera += parseInt(lettera[i].innerText.replace('.',''));
+		 sumDenaro += isNaN(parseInt(denaro[i].innerText.replace('.',''))) ? 0 : parseInt(denaro[i].innerText.replace('.',''));
+		 sumLettera += isNaN(parseInt(lettera[i].innerText.replace('.',''))) ? 0 : parseInt(lettera[i].innerText.replace('.',''));
 	}
   label.innerHTML = (sumLettera-sumDenaro).toLocaleString();
   if(sumLettera-sumDenaro > 0){
