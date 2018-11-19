@@ -8,7 +8,8 @@ var init = function(){
 
   // Gather elements to update
   label = document.getElementById('letDenBox-label');
-
+  box = document.getElementById('letDenBox')
+  
   // Fill the Div
   fillVars();
 
@@ -26,6 +27,11 @@ var fillVars = function(){
 		 sumLettera += parseInt(lettera[i].innerText.replace('.',''));
 	}
   label.innerHTML = sumLettera-sumDenaro;
+  if(sumLettera-sumDenaro > 0){
+	  newDiv.style.color = '#00CC00';
+  }else{
+	  newDiv.style.color = '#CC0000';
+  }
 
 }
 
@@ -39,7 +45,7 @@ var setupBox = function(){
     newDiv.style.position = 'fixed';
     newDiv.style.bottom = '0';
     newDiv.style.right = '0';
-    newDiv.style.backgroundColor = 'rgba(58, 58, 58, 0.8)';
+    newDiv.style.backgroundColor = 'rgba(58, 58, 58, 0.6)';
     newDiv.style.padding = '0.4em 1em';
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
