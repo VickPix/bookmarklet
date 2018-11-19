@@ -21,6 +21,8 @@ var init = function(){
   // Update the Div
   setInterval( fillVars, 3000 );
 
+  createTimeline();
+	
 }
 
 var fillVars = function(){
@@ -92,11 +94,10 @@ var setupBox = function(){
 	
 function createTimeline() {
 	var chart = new SmoothieChart();
-	chart.addTimeSeries(random, { strokeStyle: 'rgba(0, 255, 0, 1)', fillStyle: 'rgba(0, 255, 0, 0.2)', lineWidth: 4 });
-	chart.streamTo(document.getElementById("chart"), 500);
+	chart.addTimeSeries(random, { strokeStyle: 'rgba(80, 150, 230, 1)', fillStyle: 'rgba(100, 180, 255, 0.3)', lineWidth: 3 });
+	chart.streamTo(document.getElementById("chart"), 3000);
 }
 
 init();
-createTimeline();
 
 })(window);
