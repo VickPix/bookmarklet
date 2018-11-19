@@ -14,7 +14,7 @@ var init = function(){
   fillVars();
 
   // Update the Div
-  window.addEventListener('resize', fillVars);
+  setInterval( fillVars, 5);
 
 }
 
