@@ -44,17 +44,21 @@ var setupBox = function(){
     newDiv.setAttribute('id', 'letDenBox');
     newDiv.style.position = 'fixed';
     newDiv.style.bottom = '0';
-    newDiv.style.right = '0';
+    //newDiv.style.right = '0';
     newDiv.style.backgroundColor = 'rgba(58, 58, 58, 0.4)';
-    newDiv.style.padding = '0.4em 1em';
+    newDiv.style.padding = '0.3em 3em';
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
     newDiv.style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff')
     newDiv.style.transition = "all 2s";	  
     newDiv.style.fontSize = '3em';
     newDiv.style.zIndex = '9999';
+    newDiv.style.opacity = '1';
     newDiv.innerHTML = newContent;
     document.body.appendChild(newDiv);
+  }
+  document.getElementById('letDenBox').onmouseover = function() {
+    this.style.opacity = '0';
   }
 
 };
