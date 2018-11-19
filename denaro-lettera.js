@@ -29,7 +29,7 @@ var fillVars = function(){
 
 }
 
-var setupFitWeird = function(){
+var setupBox = function(){
 
   if ( !document.getElementById('letDenBox') ) {
     var newDiv = document.createElement('div');
