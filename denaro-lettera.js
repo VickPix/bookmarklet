@@ -5,9 +5,12 @@ var init = function(){
 
   // Inject the Div
   setupBox();
+	
+  last = 0;
 
-  // Gather elements to update
+  // Gather elements to update //&nearr;
   label = document.getElementById('letDenBox-label');
+  arrow = document.getElementById('letDenBox-arrow');
   box = document.getElementById('letDenBox')
   
   // Fill the Div
@@ -19,20 +22,31 @@ var init = function(){
 }
 
 var fillVars = function(){
-  var sumDenaro = 0, sumLettera = 0
+  var sumDenaro = 0, sumLettera = 0, sumTot = 0;
 	var denaro = document.querySelectorAll('td:nth-child(3)')
 	var lettera = document.querySelectorAll('td:nth-child(6)')
 	for (var i = 0; i < denaro.length; i++) {
-		console.log(parseInt(denaro[i].innerText.replace('.','')),parseInt(lettera[i].innerText.replace('.','')));
+		//console.log(parseInt(denaro[i].innerText.replace('.','')),parseInt(lettera[i].innerText.replace('.','')));
 		sumDenaro += isNaN(parseInt(denaro[i].innerText.replace('.',''))) ? 0 : parseInt(denaro[i].innerText.replace('.',''));
 		sumLettera += isNaN(parseInt(lettera[i].innerText.replace('.',''))) ? 0 : parseInt(lettera[i].innerText.replace('.',''));
 	}
-  label.innerHTML = (sumLettera-sumDenaro).toLocaleString();
-  if(sumLettera-sumDenaro > 0){
-	  box.style.color = '#00ff00';
+  sumTot = sumLettera-sumDenaro;	
+  label.innerHTML = sumTot.toLocaleString();
+  if(sumTot > 0){
+	box.style.color = '#00ff00';
   }else{
-	  box.style.color = '#ee3333';
+	box.style.color = '#ee3333';
   }
+  if(last == sumTot){
+  	arrow.innerText = ''
+  }else{
+  	if(last < sumTot){
+		arrow.innerText = '&nearr;'	  
+	  }else{
+		arrow.innerText = '&searr;'
+	  }
+  }
+  
 
 }
 
@@ -40,7 +54,7 @@ var setupBox = function(){
 
   if ( !document.getElementById('letDenBox') ) {
     var newDiv = document.createElement('div');
-    var newContent = '<div id=letDenBox-label></div> ';
+    var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div> ';
     newContent += '';
     newDiv.setAttribute('id', 'letDenBox');
     newDiv.style.position = 'fixed';
