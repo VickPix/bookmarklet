@@ -1,0 +1,1 @@
+# denaro-lettera-bookmarklet
