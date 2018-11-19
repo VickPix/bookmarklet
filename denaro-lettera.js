@@ -1,6 +1,7 @@
 ;(function(){
 
-
+var random = new TimeSeries();
+	
 var init = function(){
 
   // Inject the Div
@@ -13,7 +14,6 @@ var init = function(){
   arrow = document.getElementById('letDenBox-arrow');
   box = document.getElementById('letDenBox');
 	
-	var random = new TimeSeries();
   
   // Fill the Div
   fillVars();
