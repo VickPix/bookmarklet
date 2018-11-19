@@ -73,6 +73,9 @@ var setupBox = function(){
     document.body.appendChild(newDiv);
 	  
     document.getElementById('letDenBox-label').style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff');
+    document.getElementById('letDenBox-label').style.display = 'inline';
+    document.getElementById('letDenBox-arrow').style.display = 'inline';
+    document.getElementById('letDenBox-arrow').style.paddingLeft = '2em';	  
     document.getElementById('letDenBox-arrow').style.color = '#fff';
 	  
   }
