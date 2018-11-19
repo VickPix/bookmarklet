@@ -14,7 +14,7 @@ var init = function(){
   fillVars();
 
   // Update the Div
-  setInterval( fillVars, 5);
+  setInterval( fillVars, 5000 );
 
 }
 
