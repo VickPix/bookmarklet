@@ -1,0 +1,55 @@
+;(function(){
+
+
+var init = function(){
+
+  // Inject the Div
+  setupBox();
+
+  // Gather elements to update
+  label = document.getElementById('letDenBox-label');
+
+  // Fill the Div
+  fillVars();
+
+  // Update the Div
+  window.addEventListener('resize', fillVars);
+
+}
+
+var fillVars = function(){
+  var sumDenaro = 0, sumLettera = 0
+	var denaro = document.querySelectorAll('td:nth-child(3)')
+	var lettera = document.querySelectorAll('td:nth-child(6)')
+	for (var i = 0; i < denaro.length; i++) {
+		 sumDenaro += parseInt(denaro[i].innerText.replace('.',''));
+		 sumLettera += parseInt(lettera[i].innerText.replace('.',''));
+	}
+  label.innerHTML = sumLettera-sumDenaro;
+
+}
+
+var setupFitWeird = function(){
+
+  if ( !document.getElementById('letDenBox') ) {
+    var newDiv = document.createElement('div');
+    var newContent = '<span id=letDenBox-label></span> ';
+    newContent += ':: ';
+    newDiv.setAttribute('id', 'letDenBox');
+    newDiv.style.position = 'fixed';
+    newDiv.style.bottom = '0';
+    newDiv.style.right = '0';
+    newDiv.style.backgroundColor = 'rgba(58, 58, 58, 0.8)';
+    newDiv.style.padding = '0.4em 1em';
+    newDiv.style.color = '#00CC00';
+    newDiv.style.fontFamily = 'monospace';
+    newDiv.style.zIndex = '9999';
+    newDiv.innerHTML = newContent;
+    document.body.appendChild(newDiv);
+  }
+
+};
+
+init();
+
+})(window);
