@@ -14,7 +14,7 @@ var init = function(){
   fillVars();
 
   // Update the Div
-  setInterval( fillVars, 5000 );
+  setInterval( fillVars, 3000 );
 
 }
 
@@ -26,11 +26,11 @@ var fillVars = function(){
 		 sumDenaro += parseInt(denaro[i].innerText.replace('.',''));
 		 sumLettera += parseInt(lettera[i].innerText.replace('.',''));
 	}
-  label.innerHTML = sumLettera-sumDenaro;
+  label.innerHTML = (sumLettera-sumDenaro).toLocaleString();
   if(sumLettera-sumDenaro > 0){
-	  box.style.color = '#00CC00';
+	  box.style.color = '#00ff00';
   }else{
-	  box.style.color = '#CC0000';
+	  box.style.color = '#ff0000';
   }
 
 }
@@ -49,7 +49,7 @@ var setupBox = function(){
     newDiv.style.padding = '0.4em 1em';
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
-    //newDiv.style.transition = '';	  
+    newDiv.style.transition = "all 2s";	  
     newDiv.style.fontSize = '3em';
     newDiv.style.zIndex = '9999';
     newDiv.innerHTML = newContent;
