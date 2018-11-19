@@ -97,7 +97,8 @@ var setupBox = function(){
   }
 
 };
-	
-init();
+
+setTimeout(init,3000);
+
 
 })(window);
