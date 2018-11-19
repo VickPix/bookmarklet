@@ -64,13 +64,17 @@ var setupBox = function(){
     newDiv.style.padding = '.3em .3em';
     newDiv.style.color = '#00CC00';
     newDiv.style.fontFamily = 'monospace';
-    newDiv.style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff')
+    //newDiv.style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff')
     newDiv.style.transition = "all 1s";	  
     newDiv.style.fontSize = '3em';
     newDiv.style.zIndex = '9999';
     newDiv.style.opacity = '1';
     newDiv.innerHTML = newContent;
     document.body.appendChild(newDiv);
+	  
+    document.getElementById('letDenBox-label').style.setProperty('text-shadow','1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff');
+    document.getElementById('letDenBox-arrow').style.color = '#fff';
+	  
   }
   document.getElementById('letDenBox').onmouseover = function() {
     this.style.opacity = '0';
