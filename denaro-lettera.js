@@ -20,14 +20,19 @@ var init = function(){
 
   // Update the Div
   setInterval( fillVars, 3000 );
-chart = new SmoothieChart({maxValueScale:.9,minValueScale:.9,millisPerPixel:500,scaleSmoothing:1,grid:{millisPerLine:5000,verticalSections:4,strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
+chart = new SmoothieChart({
+	//maxValueScale:.9,
+	//minValueScale:.9,
+	millisPerPixel:500,
+	scaleSmoothing:.5,
+	grid:{millisPerLine:5000,verticalSections:4,strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
 chart.addTimeSeries(series, {lineWidth:3,strokeStyle:'#52c0f5',fillStyle:'rgba(30,97,147,0.49)'});
 chart.streamTo(document.getElementById('chart'), 3000);
 	
 }
 
 var fillVars = function(){
-  var sumDenaro = 0, sumLettera = 0, sumTot = 0;
+  var sumDenaro = 0, sumLettera = 0, sumTot = 0, count = 10;
   var denaro = document.querySelectorAll('td:nth-child(3)')
   var lettera = document.querySelectorAll('td:nth-child(6)')
 	for (var i = 0; i < denaro.length; i++) {
@@ -43,7 +48,12 @@ var fillVars = function(){
 	box.style.color = '#ee3333';
   }
   if(last == sumTot){
-  	arrow.innerText = ''
+	if(count == 0){
+		arrow.innerText = ''
+		count = 10
+	}else{
+		count--
+	}
   }else{
   	if(last < sumTot){
 		arrow.innerHTML = "&nearr;"	  
