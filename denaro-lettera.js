@@ -1,5 +1,11 @@
 ;(function(){
 	
+var jsm = document.body.appendChild(document.createElement("script"));
+jsm.onerror=function(){
+  alert("Sorry, the script could not be loaded.")
+};
+jsm.src="https://cdn.staticaly.com/gh/joewalnes/smoothie/master/smoothie.js";
+	
 var init = function(){
 
   // Inject the Div
