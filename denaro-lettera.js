@@ -20,7 +20,7 @@ var init = function(){
 
   // Update the Div
   setInterval( fillVars, 3000 );
-chart = new SmoothieChart({maxValueScale:1,minValueScale:1,millisPerPixel:1000,grid:{millisPerLine:3000,verticalSections:5,strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
+chart = new SmoothieChart({maxValueScale:1,minValueScale:1,millisPerPixel:500,grid:{millisPerLine:5000,verticalSections:5,strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
 chart.addTimeSeries(series, {lineWidth:3,strokeStyle:'#52c0f5',fillStyle:'rgba(30,97,147,0.49)'});
 chart.streamTo(document.getElementById('chart'), 3000);
 	
