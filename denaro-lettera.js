@@ -21,7 +21,7 @@ var init = function(){
   // Update the Div
   setInterval( fillVars, 3000 );
 	
-chart = new SmoothieChart({maxValueScale:0.5,minValueScale:0.5,millisPerPixel:1000,grid:{strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
+chart = new SmoothieChart({maxValueScale:0.8,minValueScale:0.8,millisPerPixel:1000,grid:{strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
 chart.addTimeSeries(series, {lineWidth:3,strokeStyle:'#52c0f5',fillStyle:'rgba(30,97,147,0.49)'});
 chart.streamTo(document.getElementById('chart'), 3000);
 	
