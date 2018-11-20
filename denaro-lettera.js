@@ -24,10 +24,6 @@ var init = function(){
 chart = new SmoothieChart({maxValueScale:1.5,minValueScale:1.5,millisPerPixel:150,grid:{strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
 chart.addTimeSeries(series, {lineWidth:3,strokeStyle:'#00ff00',fillStyle:'rgba(46,118,69,0.61)'});
 chart.streamTo(document.getElementById('chart'), 3000);
-
-  //chart = new SmoothieChart();
-  //chart.addTimeSeries(random, { strokeStyle: 'rgba(80, 150, 230, 1)', fillStyle: 'rgba(100, 180, 255, 0.3)', lineWidth: 3 });
-  //chart.streamTo(document.getElementById("chart"), 3000);
 	
 }
 
