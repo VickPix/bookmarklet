@@ -21,7 +21,7 @@ var init = function(){
   // Update the Div
   setInterval( fillVars, 3000 );
 	
-chart = new SmoothieChart({maxValueScale:1.5,minValueScale:1.5,millisPerPixel:150,grid:{strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
+chart = new SmoothieChart({maxValueScale:0.5,minValueScale:0.5,millisPerPixel:1000,grid:{strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
 chart.addTimeSeries(series, {lineWidth:3,strokeStyle:'#00ff00',fillStyle:'rgba(46,118,69,0.61)'});
 chart.streamTo(document.getElementById('chart'), 3000);
 	
@@ -60,7 +60,7 @@ var setupBox = function(){
 
   if ( !document.getElementById('letDenBox') ) {
     var newDiv = document.createElement('div');
-    var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div><canvas id="chart" width="400" height="100"></canvas>';
+    var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div><div><canvas id="chart" width="400" height="100"></canvas></div>';
     newContent += '';
     newDiv.setAttribute('id', 'letDenBox');
     newDiv.style.position = 'fixed';
