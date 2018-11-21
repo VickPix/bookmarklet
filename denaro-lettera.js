@@ -1,11 +1,11 @@
 ;(function(){
-	
+/*	
 var jsm = document.body.appendChild(document.createElement("script"));
 jsm.onerror=function(){
   alert("Sorry, the script could not be loaded.")
 };
 jsm.src="https://cdn.staticaly.com/gh/joewalnes/smoothie/master/smoothie.js";
-	
+*/	
 var init = function(){
 
   // Inject the Div
@@ -18,7 +18,7 @@ var init = function(){
   arrow = document.getElementById('letDenBox-arrow');
   box = document.getElementById('letDenBox');
 	
-  series = new TimeSeries();
+  //series = new TimeSeries();
 	
   
   // Fill the Div
@@ -26,14 +26,14 @@ var init = function(){
 
   // Update the Div
   setInterval( fillVars, 3000 );
-chart = new SmoothieChart({
+/*chart = new SmoothieChart({
 	//maxValueScale:.9,
 	//minValueScale:.9,
 	millisPerPixel:500,
 	scaleSmoothing:.5,
 	grid:{millisPerLine:5000,verticalSections:4,strokeStyle:'rgba(119,119,119,0.61)'},labels:{disabled:true}});
 chart.addTimeSeries(series, {lineWidth:3,strokeStyle:'#52c0f5',fillStyle:'rgba(30,97,147,0.49)'});
-chart.streamTo(document.getElementById('chart'), 3000);
+chart.streamTo(document.getElementById('chart'), 3000);*/
 	
 }
 
@@ -68,14 +68,17 @@ var fillVars = function(){
 	  }
   }
   last = sumTot;
-	series.append(new Date().getTime(), last/1000);
+  //series.append(new Date().getTime(), last/1000);
 }
 
 var setupBox = function(){
 
   if ( !document.getElementById('letDenBox') ) {
     var newDiv = document.createElement('div');
-    var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div><div><canvas id="chart" width="400" height="100"></canvas></div>';
+	  
+    //var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div><div><canvas id="chart" width="400" height="100"></canvas></div>';
+    var newContent = '<div id=letDenBox-label></div><div id=letDenBox-arrow></div>';
+
     newContent += '';
     newDiv.setAttribute('id', 'letDenBox');
     newDiv.style.position = 'fixed';
